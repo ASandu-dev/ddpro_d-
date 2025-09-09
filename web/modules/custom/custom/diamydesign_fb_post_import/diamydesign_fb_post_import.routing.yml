@@ -1,0 +1,7 @@
+diamydesign_fb_post_import.settings_form:
+  path: '/admin/config/diamydesign_fb_post_import'
+  defaults:
+    _form: '\Drupal\diamydesign_fb_post_import\Form\DiamydesignFbPostImportForm'
+    _title: 'DiamydesignFbPostImport Settings'
+  requirements:
+    _permission: 'administer site configuration'

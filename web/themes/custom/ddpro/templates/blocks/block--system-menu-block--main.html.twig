@@ -1,0 +1,25 @@
+{# Main Navigation Block #}
+<div class="main-navigation-wrapper">
+  {# Desktop Navigation #}
+  <nav class="hidden lg:flex items-center space-x-8 text-gray-600 font-medium">
+    {{ content }}
+    <a href="/contact" class="bg-primary-teal text-white px-6 py-2 rounded-full hover:opacity-90 transition duration-300 shadow-md">
+      Să începem
+    </a>
+  </nav>
+
+  {# Mobile Menu Button #}
+  <div class="lg:hidden">
+    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-teal focus::outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+
+  {# Mobile Menu #}
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-16 left-0 right-0 mt-4 p-4 space-y-4 bg-white shadow-lg rounded-lg z-50">
+    {{ content }}
+    <a href="/contact" class="w-full bg-primary-teal text-white px-6 py-2 rounded-full hover:opacity-90 shadow-md">Să începem</a>
+  </div>
+</div>

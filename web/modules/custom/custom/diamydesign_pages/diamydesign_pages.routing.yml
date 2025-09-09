@@ -1,0 +1,23 @@
+diamydesign_pages.contact:
+  path: '/contact'
+  defaults:
+    _controller: '\Drupal\diamydesign_pages\Controller\CustomPagesController::contactPage'
+    _title: 'Contact'
+  requirements:
+    _permission: 'access content'
+
+diamydesign_pages.blog:
+  path: '/blog'
+  defaults:
+    _controller: '\Drupal\diamydesign_pages\Controller\CustomPagesController::blogPage'
+    _title: 'Blog'
+  requirements:
+    _permission: 'access content'
+
+diamydesign_pages.about:
+  path: '/about'
+  defaults:
+    _controller: '\Drupal\diamydesign_pages\Controller\CustomPagesController::aboutPage'
+    _title: 'About'
+  requirements:
+    _permission: 'access content'

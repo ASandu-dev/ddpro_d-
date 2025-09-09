@@ -1,0 +1,38 @@
+{# templates/node--blog--full.html.twig #}
+<article class="max-w-5xl mx-auto py-12 px-4 md:px-6">
+
+  {# Article title #}
+  <h1 class="text-4xl font-extrabold text-gray-900 mb-8">{{ label }}</h1>
+
+  {# Main image (optional) #}
+  {% if node.field_image_link.value %}
+    <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
+      <img src="{{ file_url(node.field_image_link.uri) }}"
+           alt="{{ label }}"
+           class="w-full h-96 object-cover">
+    </div>
+  {% endif %}
+
+  {# Sub images grid (optional) #}
+  {% if node.field_subimage_file %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+      {% for item in node.field_subimage_file %}
+        {% if item.entity.uri.value %}
+          <div class="overflow-hidden rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+            <img src="{{ file_url(item.entity.uri.value) }}"
+                 alt="{{ label }}"
+                 class="w-full h-48 object-cover">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {# Body content #}
+  {% if content.body %}
+    <div class="prose max-w-full text-gray-700 leading-relaxed break-words overflow-x-auto">
+      {{ content.body }}
+    </div>
+  {% endif %}
+
+</article>

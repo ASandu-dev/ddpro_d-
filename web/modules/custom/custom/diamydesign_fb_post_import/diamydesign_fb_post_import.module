@@ -1,0 +1,135 @@
+<?php
+
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\file\Entity\File;
+use GuzzleHttp\Client;
+
+/**
+ * Implements hook_cron().
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function diamydesign_fb_post_import_cron(): void {
+  // Load the FacebookDataController service.
+  $facebook_data_controller = \Drupal::service('diamydesign_fb_post_import.facebook_data_controller');
+
+  // Get the Facebook data.
+  $data = $facebook_data_controller->getFacebookData();
+
+  // Loop through the data and save each post as an article.
+  foreach ($data['data'] as $post) {
+    // Check if the post is a page cover change or a profile image change.
+    if ($post['attachments']['data'][0]['type'] === 'cover_photo' || $post['attachments']['data'][0]['type'] === 'profile_media' || !$post['full_picture'] || !$post['message'] ) {
+      continue; // Skip this iteration and move to the next post.
+    }
+    // Check if a node with this post ID already exists.
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'article')
+      ->condition('field_post_id', $post['id'])
+      ->accessCheck(FALSE);
+    $nids = $query->execute();
+
+    if (empty($nids)) {
+      // Create an Article node.
+      $node = \Drupal\node\Entity\Node::create([
+        'type' => 'article',
+        'title' => mb_substr($post['message'], 0, 255),
+        'body' => [
+          'value' => $post['message'],
+          'format' => 'basic_html',
+        ],
+        'field_post_id' => $post['id'],
+        // Custom field to store the post ID.
+        'field_image_file' => [],
+        // Initialize the field_image_file as an empty array.
+      ]);
+
+      // Download the main image and associate it with the file field.
+      if (!empty($post['full_picture'])) {
+        $image_file_entity = downloadAndSaveImageFile($post['full_picture']);
+        if ($image_file_entity) {
+          $node->field_image_file[] = [
+            'target_id' => $image_file_entity->id(),
+            'alt' => 'Alternative text for the main image',
+          ];
+        }
+      }
+
+      // Download and associate the sub-images.
+      if (!empty($post['attachments'])) {
+        foreach ($post['attachments']['data'] as $attachment) {
+          if (!empty($attachment['subattachments'])) {
+            foreach ($attachment['subattachments']['data'] as $subattachment) {
+              if (!empty($subattachment['media']['image']['src'])) {
+                $subimage_file_entity = downloadAndSaveImageFile($subattachment['media']['image']['src']);
+                if ($subimage_file_entity) {
+                  $node->field_subimage_file[] = [
+                    'target_id' => $subimage_file_entity->id(),
+                    'alt' => 'Alternative text for the sub-image',
+                  ];
+                }
+              }
+            }
+          }
+        }
+      }
+
+      $node->save();
+    }
+  }
+}
+
+/**
+ * Helper function to download and save an image file.
+ */
+function downloadAndSaveImageFile($image_url) {
+  $client = new Client();
+  try {
+    $response = $client->get($image_url);
+    $image_data = $response->getBody()->getContents();
+
+    $filename = basename($image_url);
+
+    // Trim the filename to a desired length (e.g., 50 characters).
+    $max_filename_length = 50;
+    if (strlen($filename) > $max_filename_length) {
+      $filename = substr($filename, 0, $max_filename_length);
+    }
+
+    $directory = 'public://';
+    $file_system = \Drupal::service('file_system');
+    $file_uri = $directory . $filename;
+    $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+
+    // Create a new file entity.
+    $file = File::create([
+      'uri' => $file_uri,
+    ]);
+    $file->setPermanent();
+    $file->save();
+
+    // Save the file data.
+    file_put_contents($file->getFileUri(), $image_data);
+
+    return $file;
+  } catch (Exception $e) {
+    // Handle any errors that occur during file download.
+    // You can log the error or perform any necessary actions.
+    return null;
+  }
+}
+/**
+ * Alter an email message created with MailManagerInterface->mail().
+ * Added support for Autoreply in contact form to support tokens.
+ * @param $message
+ *
+ *
+ * @see \Drupal\Core\Mail\MailManagerInterface::mail()
+ */
+function diamydesign_fb_post_import_mail_alter(&$message): void {
+  if ($message['id'] == 'contact_page_autoreply') {
+
+    $message['body'][0] = \Drupal::token()->replace($message['body'][0], ['contact_message' => $message['params']['contact_message']]);
+  }
+}
+

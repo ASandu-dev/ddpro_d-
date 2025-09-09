@@ -1,0 +1,6 @@
+services:
+  diamydesign_fb_post_import.facebook_data_controller:
+    class: Drupal\diamydesign_fb_post_import\Controller\FacebookDataController
+    arguments: ['@http_client']
+    tags:
+      - { name: controller_service }

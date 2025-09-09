@@ -1,0 +1,6 @@
+diamydesign_fb_post_import.settings_form:
+  title: 'DiamyDesign Settings'
+  description: 'Configure DiamyDesign settings.'
+  parent: system.admin_config
+  route_name: diamydesign_fb_post_import.settings_form
+  weight: 5
