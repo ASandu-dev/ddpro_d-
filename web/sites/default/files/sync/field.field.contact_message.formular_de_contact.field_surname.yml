@@ -1,0 +1,19 @@
+uuid: 05fe3ac8-1b51-45bd-aea0-296aa1304c92
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.formular_de_contact
+    - field.storage.contact_message.field_surname
+id: contact_message.formular_de_contact.field_surname
+field_name: field_surname
+entity_type: contact_message
+bundle: formular_de_contact
+label: Prenume
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

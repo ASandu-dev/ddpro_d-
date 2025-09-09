@@ -1,4 +1,4 @@
-uuid: bafbace3-ab6c-4440-96d1-b642805f3681
+uuid: 914f4ecc-6f23-4b74-a950-f941aa2b876c
 langcode: en
 status: true
 dependencies:
@@ -11,17 +11,17 @@ id: node.article.field_subimage_file
 field_name: field_subimage_file
 entity_type: node
 bundle: article
-label: 'Subimage file'
+label: 'Sub Images'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: png
+  file_extensions: 'png gif jpg jpeg webp'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
@@ -30,7 +30,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: null
     alt: ''
     title: ''
     width: null

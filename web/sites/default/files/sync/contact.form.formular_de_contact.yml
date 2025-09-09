@@ -1,0 +1,12 @@
+uuid: 148dd3d4-1bbf-46cc-9ab1-0d3ae5b860e9
+langcode: en
+status: true
+dependencies: {  }
+id: formular_de_contact
+label: 'Formular de contact'
+recipients:
+  - sandu.andrei86@gmail.com
+reply: "Dragă [contact_message:field_first_name:value] [contact_message:field_surname:value],\r\n\r\nÎți mulțumim pentru mesajul trimis prin formularul de contact de pe website-ul nostru. Am primit cu succes informațiile pe care le-ai furnizat și îți vom răspunde în cel mai scurt timp posibil.\r\n\r\nNe bucurăm că ai ales să ne contactezi și îți promitem că vom depune toate eforturile pentru a-ți oferi un răspuns complet și prompt. Apreciem încrederea pe care ne-ai acordat-o și suntem aici să te ajutăm în orice fel putem.\r\n\r\nPână atunci, te invităm să explorezi restul site-ului nostru pentru a afla mai multe despre serviciile noastre și pentru a descoperi proiectele pe care le-am realizat atât în țară, cât și în străinătate.\r\n\r\nDacă ai alte întrebări sau solicitări urgente, te rugăm să ne contactezi direct la numărul de telefon sau adresa de e-mail disponibile pe website.\r\n\r\nMulțumim încă o dată pentru mesajul tău și rămânem la dispoziția ta.\r\n\r\nCu drag,\r\n\r\nEchipa DiamyDesign"
+weight: 0
+message: 'Mesaj trimis!'
+redirect: /contact

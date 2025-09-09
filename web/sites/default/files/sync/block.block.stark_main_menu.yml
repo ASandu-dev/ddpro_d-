@@ -1,4 +1,4 @@
-uuid: aa4f482b-838c-4c8a-b77a-81d614c2753f
+uuid: 9400062e-d18d-41c9-bae5-174249e636ca
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - stable9
-id: stable9_mainnavigation
-theme: stable9
-region: header
+    - stark
+_core:
+  default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
+id: stark_main_menu
+theme: stark
+region: primary_menu
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
@@ -20,6 +22,6 @@ settings:
   label_display: '0'
   provider: system
   level: 1
-  depth: null
-  expand_all_items: false
+  depth: 2
+  expand_all_items: true
 visibility: {  }

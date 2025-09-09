@@ -1,0 +1,19 @@
+uuid: 878122be-0140-4149-9163-d1daf5360730
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.formular_de_contact
+    - field.storage.contact_message.field_email
+id: contact_message.formular_de_contact.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: formular_de_contact
+label: Email
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email
