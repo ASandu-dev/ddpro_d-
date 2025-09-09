@@ -51,7 +51,6 @@ module:
 theme:
   olivero: 0
   claro: 0
-  ddpro: 0
-  stable9: 0
   stark: 0
+  ddpro: 0
 profile: standard

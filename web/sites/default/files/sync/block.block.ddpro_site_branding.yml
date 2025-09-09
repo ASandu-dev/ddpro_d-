@@ -1,13 +1,15 @@
-uuid: 6b215b86-5249-427e-a944-981a1864b896
+uuid: 176ea7b2-48c2-445a-8011-2bfe445dea29
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stable9
-id: stable9_sitebranding
-theme: stable9
+    - ddpro
+_core:
+  default_config_hash: '-OAAZDw1OR_UyAEPEKX0Hu4LaZD149vW9PmMnIC-v0o'
+id: ddpro_site_branding
+theme: ddpro
 region: header
 weight: -1
 provider: null

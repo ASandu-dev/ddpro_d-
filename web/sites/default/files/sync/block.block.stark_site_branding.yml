@@ -1,15 +1,17 @@
-uuid: 1d2a6ca8-980c-43d9-81e3-7622cbcae9a5
+uuid: bd9dafd5-a0a6-4eb4-bac9-aca2442288c2
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - ddpro
-id: ddpro_sitebranding
-theme: ddpro
+    - stark
+_core:
+  default_config_hash: '-OAAZDw1OR_UyAEPEKX0Hu4LaZD149vW9PmMnIC-v0o'
+id: stark_site_branding
+theme: stark
 region: header
-weight: -1
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:

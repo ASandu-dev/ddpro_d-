@@ -1,4 +1,4 @@
-uuid: 451e45e9-a06a-46b9-888e-c028db70d7ee
+uuid: f6920c3e-5cfc-4fd8-b520-7e22b46da723
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,11 @@ id: node.article.field_post_id
 field_name: field_post_id
 entity_type: node
 bundle: article
-label: 'Post id'
+label: 'Facebook Post ID'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: string
