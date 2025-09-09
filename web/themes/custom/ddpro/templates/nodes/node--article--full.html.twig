@@ -1,0 +1,36 @@
+
+<article class="max-w-5xl mx-auto py-12 px-4 md:px-6">
+
+  {# Article title #}
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">{{ label }}</h1>
+
+  {# Main image (optional) #}
+  {% if node.field_image_file.entity.uri.value %}
+    <div class="mb-6">
+      <img src="{{ file_url(node.field_image_file.entity.uri.value) }}"
+           alt="{{ label }}"
+           class="w-full h-96 object-cover rounded-lg shadow-md">
+    </div>
+  {% endif %}
+
+  {# Sub images grid #}
+  {% if node.field_subimage_file %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+      {% for item in node.field_subimage_file %}
+        {% if item.entity.uri.value %}
+          <img src="{{ file_url(item.entity.uri.value) }}"
+               alt="{{ label }}"
+               class="w-full h-48 object-cover rounded-lg shadow-md">
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {# Body content #}
+  {% if content.body %}
+    <div class="prose max-w-full text-gray-700">
+      {{ content.body }}
+    </div>
+  {% endif %}
+
+</article>

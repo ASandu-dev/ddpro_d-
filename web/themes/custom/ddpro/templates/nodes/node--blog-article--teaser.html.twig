@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Template for project teaser cards.
+ */
+#}
+
+<a href="{{ url }}" class="group block relative min-h-80 rounded-2xl shadow-lg overflow-hidden bg-white cursor-pointer transition transform hover:scale-105">
+
+  {# Background image #}
+  {% if node.field_image_link.value %}
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ file_url(node.field_image_link.uri) }}');"></div>
+  {% endif %}
+
+  {# Bottom overlay with title and optional description #}
+  <div class="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-gray-900 via-transparent to-transparent">
+    <h3 class="text-white text-xl font-bold mb-2">
+      {{ label }}
+    </h3>
+{#    {% if node.body.value %}#}
+{#      <p class="text-gray-300 text-sm opacity-80">{{ node.field_description.value }}</p>#}
+{#    {% endif %}#}
+  </div>
+
+  {# Hover overlay effect #}
+  <div class="absolute inset-0 bg-primary-teal opacity-0 group-hover:opacity-10 transition duration-300"></div>
+</a>

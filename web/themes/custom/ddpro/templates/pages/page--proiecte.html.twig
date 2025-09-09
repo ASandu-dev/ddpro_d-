@@ -1,0 +1,16 @@
+{{ page.header }}
+<main class="bg-light-gray py-16">
+  <div class="text-center px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800">
+      Portofoliul Nostru de Proiecte
+    </h2>
+    <p class="mt-4 text-base sm:text-lg text-gray-600">
+      Descoperiți câteva dintre lucrările noastre recente în tâmplărie și montaj de fațade.
+    </p>
+  </div>
+
+  <div class="mt-10 px-4 sm:px-6 lg:px-20 xl:px-48">
+    {{ drupal_view('recent_articles', 'page_1') }}
+  </div>
+</main>
+{{ page.footer }}
