@@ -1,0 +1,407 @@
+<main class="bg-light-gray">
+  <!-- Hero Section -->
+  <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="hero">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-12">
+      <!-- Text Content -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-800">
+          Upgradează-ți Proiectul cu Soluții Moderne de Tâmplărie și Fațade
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+          Suntem o companie specializată în furnizarea și montajul de soluții moderne de tâmplărie din aluminiu și PVC,
+          fațade ventilate, pereți cortină și balustrade din sticlă.
+        </p>
+        <div class="mt-8 flex justify-center lg:justify-start space-x-4">
+          <a href="/contact" class="bg-primary-teal text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg">
+            Începe Proiectul
+          </a>
+          <a href="/about"
+              class="bg-white text-gray-800 px-8 py-3 rounded-full border border-gray-300 hover:bg-gray-100 transition shadow-lg">
+            Descoperă-ne
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="lg:w-1/2">
+        <img src="{{ file_url( directory ~ '/assets/img/header_image.png') }}" alt="Design Interior"
+             class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Services Section -->
+  <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="services">
+    <div class="text-center">
+      <h2 class="text-4xl font-extrabold text-gray-800">Serviciile Noastre</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Viziunea Ta, Expertiza Noastră: Transformăm Spațiul Dorit în Realitate
+      </p>
+    </div>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transform transition-transform hover:scale-105">
+        <div class="flex justify-center mb-6">
+          <div class="bg-light-gray p-4 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-teal" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800">Tâmplărie Aluminiu & PVC</h3>
+        <p class="mt-4 text-gray-600">
+          Soluții moderne și durabile pentru uși și ferestre, adaptate nevoilor tale arhitecturale.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transform transition-transform hover:scale-105">
+        <div class="flex justify-center mb-6">
+          <div class="bg-light-gray p-4 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-teal" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2m14 0V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m7 0v2m0 0v2m0 0v2"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800">Fațade Ventilate</h3>
+        <p class="mt-4 text-gray-600">
+          Soluție modernă și funcțională pentru un aspect estetic superior și performanță termică optimă.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transform transition-transform hover:scale-105">
+        <div class="flex justify-center mb-6">
+          <div class="bg-light-gray p-4 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-teal" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800">Pereți Cortină & Sisteme Bond</h3>
+        <p class="mt-4 text-gray-600">
+          Soluții elegante și sigure pentru închideri moderne ale clădirilor și elemente arhitecturale distinctive.
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transform transition-transform hover:scale-105">
+        <div class="flex justify-center mb-6">
+          <div class="bg-light-gray p-4 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-teal" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 0012 21a12.001 12.001 0 008.618-18.016z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800">Balustrade din Sticlă</h3>
+        <p class="mt-4 text-gray-600">
+          Balustrade elegante, transparente și sigure, care adaugă un plus de rafinament oricărui spațiu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA Section with images -->
+  <section class="gradient-bg text-white py-16 lg:py-24">
+    <div class="container mx-auto max-w-7xl px-4">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl sm:text-4xl font-bold leading-tight">
+            Credem că atenția la detalii și pasiunea pentru precizie duc la rezultate perfecte.
+          </h2>
+          <p class="mt-4 text-lg">
+            Cu experiență în domeniu din 2014, echipa noastră este formată din profesioniști calificați, cu cunoștințe
+            vaste și la curent cu cele mai noi tendințe și tehnologii.
+          </p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20"
+                   fill="currentColor">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+              <span>Materiale de Înaltă Calitate</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20"
+                   fill="currentColor">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+              <span>Montaj Expert</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20"
+                   fill="currentColor">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"/>
+              </svg>
+              <span>Soluții Personalizate</span>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-1/2 relative mt-8 lg:mt-0">
+          <!-- You can place an image or illustration here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Our Process Section -->
+  <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="projects">
+    <div class="text-center">
+      <h2 class="text-4xl font-extrabold text-gray-800">Portofoliul Nostru de Proiecte</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Descoperiți câteva dintre lucrările noastre recente în tâmplărie și montaj de fațade.
+      </p>
+      <a href="/proiecte" class="mt-4 texr-lg text-primary-teal">Mai multe proiecte >>></a>
+    </div>
+    <!-- Recent 3 articles  -->
+    {{ drupal_view('recent_articles', 'recent_articles') }}
+
+  </section>
+
+  <!-- CTA "Să Descoperim Lucrările" -->
+  <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="discover">
+    <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg flex flex-col-reverse lg:flex-row items-center gap-12">
+      <div class="lg:w-1/2 space-y-6">
+        <h2 class="text-3xl font-extrabold text-gray-800">
+          Abordarea Noastră Orientată către Client
+        </h2>
+        <p class="text-gray-600">
+          Încrederea și satisfacția clienților noștri sunt prioritățile noastre principale. Colaborăm îndeaproape cu
+          dumneavoastră pentru a înțelege nevoile și cerințele specifice ale proiectului, oferind soluții personalizate
+          și sfaturi specializate.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-secondary-orange p-6 rounded-2xl text-white">
+            <h3 class="text-xl font-bold">Consultanță pentru Proiect</h3>
+            <p class="mt-2 text-sm">
+              Vă ajutăm să luați decizii informate pentru proiectul dumneavoastră.
+            </p>
+          </div>
+          <div class="bg-primary-teal p-6 rounded-2xl text-white">
+            <h3 class="text-xl font-bold">Montaj Profesionist</h3>
+            <p class="mt-2 text-sm">
+              Echipa noastră calificată asigură un finisaj impecabil și profesionist.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2">
+        <img src="{{ file_url( directory ~ '/assets/img/presentation.png') }}" alt="prezentare">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Secțiunea "Începeți cu Noi" -->
+  <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="contact">
+    <div class="flex flex-col lg:flex-row gap-12 lg:items-stretch">
+      <!-- Coloana cu Imagine -->
+      <div class="lg:w-1/2 bg-white rounded-3xl shadow-lg flex">
+        <img src="{{ file_url( directory ~ '/assets/img/project_steps.png') }}" alt="pași proiect"
+             class="w-full h-full object-cover rounded-3xl">
+      </div>
+
+      <!-- Coloana cu Text -->
+      <div class="lg:w-1/2 bg-white p-8 md:p-12 rounded-3xl shadow-lg flex flex-col">
+        <div class="my-auto">
+          <h2 class="text-3xl font-extrabold text-gray-800 mb-6">
+            Începeți Proiectul în Trei Pași Simpli
+          </h2>
+          <div class="space-y-6 flex-1">
+            <div class="flex items-start">
+              <span
+                  class="text-xl font-bold text-gray-800 bg-light-gray w-10 h-10 flex items-center justify-center rounded-full mr-4">01</span>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">Consultanță Inițială</h3>
+                <p class="mt-1 text-gray-600">
+                  Începem cu o discuție gratuită pentru a înțelege nevoile, preferințele și obiectivele proiectului
+                  dumneavoastră.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span
+                  class="text-xl font-bold text-gray-800 bg-light-gray w-10 h-10 flex items-center justify-center rounded-full mr-4">02</span>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">Proiectare & Planificare</h3>
+                <p class="mt-1 text-gray-600">
+                  Echipa noastră prezintă concepte creative, planuri tehnice și o ofertă detaliată pentru aprobarea
+                  dumneavoastră.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span
+                  class="text-xl font-bold text-gray-800 bg-light-gray w-10 h-10 flex items-center justify-center rounded-full mr-4">03</span>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">Execuție Impecabilă</h3>
+                <p class="mt-1 text-gray-600">
+                  Gestionăm întregul proiect, asigurând un proces fluid și un rezultat final pe care îl veți adora.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Secțiunea Testimoniale -->
+  <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="testimonials">
+    <div class="text-center">
+      <h2 class="text-4xl font-extrabold text-gray-800">Ce spun clienții noștri</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Satisfacția clienților noștri este cel mai mare succes al nostru. Iată ce au spus despre noi.
+      </p>
+    </div>
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition-all">
+        <div class="flex items-center space-x-2 mb-4">
+          <!-- Stele (5) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <!-- Repetă pentru cele 5 stele -->
+        </div>
+        <p class="text-gray-600 mb-6 italic">
+          "Echipa Diamy Design a fost incredibilă. Au înțeles stilul meu și au creat o casă care se simțea atât luxoasă,
+          cât și personală. Recomand cu căldură munca lor!"
+        </p>
+        <div class="flex items-center space-x-4">
+          <img src="https://placehold.co/64x64/d1d5db/000000?text=JD" alt="Fotografia clientului"
+               class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <p class="font-bold text-gray-800">Jessica Miller</p>
+            <p class="text-sm text-gray-500">Proprietar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition-all">
+        <div class="flex items-center space-x-2 mb-4">
+          <!-- Stele (5) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+        </div>
+        <p class="text-gray-600 mb-6 italic">
+          "Echipa a fost foarte profesională. Au livrat un produs de înaltă calitate la timp, iar comunicarea pe
+          parcursul proiectului a fost excelentă. Un partener de încredere pentru clădirea noastră nouă."
+        </p>
+        <div class="flex items-center space-x-4">
+          <img src="https://placehold.co/64x64/d1d5db/000000?text=JD" alt="Fotografia clientului"
+               class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <p class="font-bold text-gray-800">John Davis</p>
+            <p class="text-sm text-gray-500">Manager de proiect</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition-all">
+        <div class="flex items-center space-x-2 mb-4">
+          <!-- Stele (4) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"/>
+          </svg>
+        </div>
+        <p class="text-gray-600 mb-6 italic">
+          "Sunt foarte impresionată de calitatea balustradei din sticlă pe care au instalat-o. Arată minunat și este
+          extrem de rezistentă. Echipa lor a fost profesionistă și eficientă."
+        </p>
+        <div class="flex items-center space-x-4">
+          <img src="https://placehold.co/64x64/d1d5db/000000?text=LD" alt="Fotografia clientului"
+               class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <p class="font-bold text-gray-800">Laura Diaz</p>
+            <p class="text-sm text-gray-500">Proprietar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

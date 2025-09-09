@@ -1,0 +1,37 @@
+{##}
+{#/**#}
+{# * @file#}
+{# * Theme override to display all fields in a row as a card with image background and bottom bar.#}
+{# *#}
+{# * Expected fields: title, body, field_image#}
+{# */#}
+{##}
+
+{#<div class="bg-white rounded-2xl shadow-lg overflow-hidden relative group min-h-80">#}
+
+{#  #}{# Background image #}
+{#  {% if fields.field_image_file.content %}#}
+{#    {% set image_url = fields.field_image_file.content|striptags|trim %}#}
+{#    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ image_url }}');"></div>#}
+{#  {% endif %}#}
+
+
+{#  #}{# Bottom overlay bar for title + body #}
+{#  <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-gray-900 via-transparent to-transparent w-full">#}
+{#    {% if fields.title.content %}#}
+{#      <h3 class="text-white text-xl font-bold mb-2">#}
+{#        {{ fields.title.content }}#}
+{#      </h3>#}
+{#    {% endif %}#}
+
+{#    {% if fields.body.content %}#}
+{#      <p class="text-gray-300 text-sm opacity-80">#}
+{#        {{ fields.body.content }}#}
+{#      </p>#}
+{#    {% endif %}#}
+{#  </div>#}
+
+{#  #}{# Hover overlay effect #}
+{#  <div class="absolute inset-0 bg-primary-teal opacity-0 group-hover:opacity-10 transition duration-300"></div>#}
+
+{#</div>#}

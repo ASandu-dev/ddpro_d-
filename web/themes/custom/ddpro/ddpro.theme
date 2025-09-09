@@ -1,0 +1,203 @@
+<?php
+
+/**
+ * @file
+ * Contains the ddpro.theme file.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\contact\Entity\ContactForm;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the
+ * contact_message_formular_de_contact_form form.
+ */
+function ddpro_form_contact_message_formular_de_contact_form_alter(&$form, &$form_state, $form_id) {
+
+  // Modify the form elements and structure.
+  $form['#prefix'] = '<div class="bg-white py-6 sm:py-8 lg:py-12">
+                          <div class="mx-auto max-w-screen-2xl lg:max-w-[50%] px-4 md:px-8">
+                            <!-- text - start -->
+                            <div class="mb-10 md:mb-16">
+                              <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Formular de contact</h2>
+                              <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+                                Această formă de contact vă permite să ne trimiteți un mesaj direct.
+                                Vă rugăm să completați câmpurile de mai jos cu informațiile corespunzătoare și să ne scrieți mesajul în secțiunea destinată acestuia.
+                                Vom răspunde cât mai curând posibil. Vă mulțumim pentru interesul acordat!
+                              </p>
+                            </div>
+                            <!-- text - end -->
+                            <!-- form - start -->
+                            <form class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2">';
+
+  $form['#suffix'] = '</form>
+                        <!-- form - end -->
+                      </div>
+                    </div>';
+
+  // Modify the form elements as needed.
+  //Style for labels
+  $form['field_first_name']['widget'][0]['#title_attributes']['class'][] = 'mb-2 inline-block text-sm text-gray-800 sm:text-base';
+  $form['field_surname']['widget'][0]['#title_attributes']['class'][] = 'mb-2 inline-block text-sm text-gray-800 sm:text-base';
+  $form['field_email']['widget'][0]['#title_attributes']['class'][] = 'mb-2 inline-block text-sm text-gray-800 sm:text-base';
+  $form['field_subject']['widget'][0]['#title_attributes']['class'][] = 'mb-2 inline-block text-sm text-gray-800 sm:text-base';
+  $form['field_message']['widget'][0]['#title_attributes']['class'][] = 'mb-2 inline-block text-sm text-gray-800 sm:text-base';
+  //Style for input
+  $form['field_first_name']['widget'][0]['value']['#attributes']['class'][] = 'w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-600 transition duration-100 focus:ring';
+  $form['field_surname']['widget'][0]['value']['#attributes']['class'][] = 'w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-600 transition duration-100 focus:ring';
+  $form['field_email']['widget'][0]['value']['#attributes']['class'][] = 'w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-600 transition duration-100 focus:ring';
+  $form['field_subject']['widget'][0]['value']['#attributes']['class'][] = 'w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-600 transition duration-100 focus:ring';
+  $form['field_message']['widget'][0]['value']['#attributes']['class'][] = 'h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-600 transition duration-100 focus:ring';
+
+  $form['actions']['submit']['#attributes']['class'][] = 'inline-block rounded-lg bg-green-600 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-600 transition duration-100 hover:bg-green-800 focus-visible:ring active:bg-green-700 md:text-base';
+
+
+  $form['#validate'][] = 'diamydesign_form_contact_message_formular_de_contact_form_validate';
+  $form['#submit'][] = 'diamydesign_form_contact_message_formular_de_contact_form_submit';
+}
+
+function ddpro_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_login_form') {
+    // Add a custom class to the "name" field.
+    $form['name']['#attributes']['class'][] = "block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300";
+    $form['pass']['#attributes']['class'][] = "block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300";
+    $form['actions']['submit']['#attributes']['class'][] = "bg-green-600 w-full py-2 text-white capitalize transition-colors duration-300 transform rounded-lg hover:bg-green-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50";
+
+    // Add placeholders.
+    $form['name']['#attributes']['placeholder'] = t('username');
+    $form['pass']['#attributes']['placeholder'] = t('password');
+
+    // descriptions removed
+    unset($form['name']['#description']);
+    unset($form['pass']['#description']);
+    // Labels
+    $form['name']['#title_display'] = 'invisible';
+    $form['pass']['#title_display'] = 'invisible';
+
+    //Submit Value
+    $form['actions']['submit']['#value'] = t('Login');
+  }
+}
+/**
+ * Implements hook_theme_suggestions_form_alter().
+ */
+function ddpro_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  // Check if the form being rendered is the user login form.
+  if ($variables['element']['#form_id'] === 'user_login_form') {
+    $suggestions[] = 'form__user__login_form';
+  }
+}
+/**
+ * Form validation callback for 'contact_message_formular_de_contact_form' form.
+ */
+function ddpro_form_contact_message_formular_de_contact_form_validate(&$form, &$form_state) {
+  // Perform custom form validation if needed.
+}
+
+/**
+ * Form submission callback for 'contact_message_formular_de_contact_form' form.
+ */
+function ddpro_form_contact_message_formular_de_contact_form_submit(&$form, &$form_state) {
+  // Perform custom form submission actions if needed.
+  printf($form);
+}
+
+
+/**
+ * Implements hook_install().
+ */
+function ddpro_install() {
+    $entity_type_manager = \Drupal::entityTypeManager();
+    $block_storage = $entity_type_manager->getStorage('block');
+
+    // 1. Remove all existing blocks.
+    $blocks = $block_storage->loadMultiple();
+    if ($blocks) {
+        $block_storage->delete($blocks);
+    }
+
+    // 2. Add Site Branding block.
+    if (!Block::load('ddpro_sitebranding')) {
+        Block::create([
+            'id' => 'ddpro_sitebranding',
+            'theme' => 'ddpro',
+            'plugin' => 'system_branding_block',
+            'region' => 'header',
+            'weight' => -10,
+            'settings' => [
+                'id' => 'system_branding_block',
+                'label' => 'Site branding',
+                'label_display' => FALSE,
+            ],
+        ])->save();
+    }
+
+    // 3. Add Main Navigation block.
+    if (!Block::load('ddpro_mainnavigation')) {
+        Block::create([
+            'id' => 'ddpro_mainnavigation',
+            'theme' => 'ddpro',
+            'plugin' => 'system_menu_block:main',
+            'region' => 'header',
+            'weight' => 0,
+            'settings' => [
+                'id' => 'system_menu_block:main',
+                'label' => 'Main navigation',
+                'label_display' => FALSE,
+            ],
+        ])->save();
+    }
+
+    // 4. Add Main Page Content block.
+    if (!Block::load('ddpro_mainpagecontent')) {
+        Block::create([
+            'id' => 'ddpro_mainpagecontent',
+            'theme' => 'ddpro',
+            'plugin' => 'system_main_block',
+            'region' => 'content',
+            'weight' => 0,
+            'settings' => [
+                'id' => 'system_main_block',
+                'label' => 'Main page content',
+                'label_display' => FALSE,
+            ],
+        ])->save();
+    }
+
+    // 5. Add Footer Navigation block.
+    if (!Block::load('ddpro_footer')) {
+        Block::create([
+            'id' => 'ddpro_footer',
+            'theme' => 'ddpro',
+            'plugin' => 'system_menu_block:footer',
+            'region' => 'footer',
+            'weight' => 0,
+            'settings' => [
+                'id' => 'system_menu_block:footer',
+                'label' => 'Footer navigation',
+                'label_display' => FALSE,
+            ],
+        ])->save();
+    }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function ddpro_preprocess_page(array &$variables) {
+    // Only add the contact form on the site-wide contact route.
+    if (\Drupal::routeMatch()->getRouteName() === 'contact.site_page') {
+        $contact_form = ContactForm::load('formular_de_contact');
+        if ($contact_form) {
+            $form_object = \Drupal::entityTypeManager()
+                ->getFormObject('contact_message', 'default')
+                ->setEntity(\Drupal::entityTypeManager()
+                    ->getStorage('contact_message')
+                    ->create(['contact_form' => $contact_form->id()])
+                );
+            $form = \Drupal::formBuilder()->getForm($form_object);
+            $variables['contact_form'] = $form;
+        }
+    }
+}
