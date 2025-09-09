@@ -1,0 +1,19 @@
+uuid: 31b77600-b1ad-4e26-9c15-0cfbec8768dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.formular_de_contact
+    - field.storage.contact_message.field_subject
+id: contact_message.formular_de_contact.field_subject
+field_name: field_subject
+entity_type: contact_message
+bundle: formular_de_contact
+label: Subiect
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

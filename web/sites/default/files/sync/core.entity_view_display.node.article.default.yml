@@ -1,14 +1,20 @@
-uuid: 34bbb984-f410-4500-8946-1ad987ada278
+uuid: 037d2973-e87b-42d2-a5f8-c42173ff92bc
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_image
     - field.field.node.article.field_image_file
     - field.field.node.article.field_post_id
     - field.field.node.article.field_subimage_file
+    - field.field.node.article.field_tags
+    - image.style.wide
     - node.type.article
   module:
+    - comment
     - image
     - text
     - user
@@ -26,38 +32,40 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_image_file:
-    type: image
+  comment:
+    type: comment_default
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      pager_id: 0
     third_party_settings: {  }
-    weight: 101
+    weight: 110
     region: content
-  field_post_id:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 102
-    region: content
-  field_subimage_file:
+  field_image:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: wide
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
-    weight: 103
+    weight: -1
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_image_file: true
+  field_post_id: true
+  field_subimage_file: true

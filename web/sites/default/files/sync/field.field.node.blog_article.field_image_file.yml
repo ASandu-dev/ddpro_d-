@@ -1,4 +1,4 @@
-uuid: 586a2cb1-613b-4203-8f94-d5080a21c997
+uuid: 64587821-9e4b-47a1-8483-9ba3a2d78bda
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: node.blog_article.field_image_file
 field_name: field_image_file
 entity_type: node
 bundle: blog_article
-label: 'Image file'
+label: 'Field image'
 description: ''
 required: false
 translatable: false
@@ -26,7 +26,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: true
-  alt_field_required: false
+  alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
