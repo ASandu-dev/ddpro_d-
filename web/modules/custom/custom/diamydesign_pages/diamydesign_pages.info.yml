@@ -1,0 +1,5 @@
+name: 'Diamydesigns Pages'
+type: module
+description: 'A custom module to add pages blocks.'
+package: Diamydesign
+core_version_requirement: ^10 || ^11

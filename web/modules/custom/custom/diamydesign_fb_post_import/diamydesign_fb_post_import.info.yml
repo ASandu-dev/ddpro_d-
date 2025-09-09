@@ -1,0 +1,6 @@
+name: facebook_importer
+type: module
+description: 'Imports posts from a Facebook page.'
+package: Diamydesign
+core_version_requirement: ^10 || ^11
+version: '1.x-1.0'

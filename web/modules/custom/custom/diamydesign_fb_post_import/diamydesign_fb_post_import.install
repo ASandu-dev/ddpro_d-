@@ -1,0 +1,55 @@
+<?php
+
+use Drupal\node\Entity\NodeType;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Entity\EntityStorageException;
+
+/**
+ * Implements hook_install().
+ */
+function diamydesign_fb_post_import_install()
+{
+// Create 'article' content type if it doesn't exist.
+  if (!NodeType::load('article')) {
+    $node_type = NodeType::create([
+      'type' => 'article',
+      'name' => 'Article',
+    ]);
+    $node_type->save();
+  }
+
+// Define fields
+  $fields = [
+    'field_post_id' => [
+      'type' => 'string',
+      'label' => 'Facebook Post ID',
+    ],
+    'field_image_file' => [
+      'type' => 'image',
+      'label' => 'Main Image',
+    ],
+    'field_subimage_file' => [
+      'type' => 'image',
+      'label' => 'Sub Images',
+      'settings' => ['cardinality' => -1], // Allow multiple images
+    ],
+  ];
+
+  foreach ($fields as $field_name => $field_info) {
+    if (!FieldStorageConfig::loadByName('node', $field_name)) {
+      FieldStorageConfig::create([
+        'field_name' => $field_name,
+        'entity_type' => 'node',
+        'type' => $field_info['type'],
+      ])->save();
+
+      FieldConfig::create([
+        'field_name' => $field_name,
+        'entity_type' => 'node',
+        'bundle' => 'article',
+        'label' => $field_info['label'],
+      ])->save();
+    }
+  }
+}
