@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.add("hidden");
       }
     });
+
+    //Close menu when scrolling
+    document.addEventListener("scroll", function(e) {
+      if (window.scrollY > 100) {
+        mobileMenu.classList.add("hidden");
+      }
+    })
   }
 
   // --- Back to top button ---
