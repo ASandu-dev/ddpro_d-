@@ -46,20 +46,24 @@
 <div class="layout-container">
 
 
-    {{ page.header }}
-    {{ page.mobile_menu }}
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
+
+
+  {{ page.mobile_menu }}
 
   {{ page.primary_menu }}
 
-      {% block content %}
-        {{ page.content }}
-      {% endblock %}
+  {% block content %}
+    {{ page.content }}
+  {% endblock %}
 
 
 
 
   {% if page.footer %}
-      {{ page.footer }}
+    {{ page.footer }}
   {% endif %}
 
 </div>{# /.layout-container #}
