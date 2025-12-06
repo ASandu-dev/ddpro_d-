@@ -1,3 +1,4 @@
+{% if is_front %}
 <main class="bg-light-gray">
   <!-- Hero Section -->
   <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="hero">
@@ -28,7 +29,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- Services Section -->
   <section class="container mx-auto max-w-7xl px-4 py-16 lg:py-24" id="services">
@@ -405,3 +405,6 @@
   </section>
 
 </main>
+{% else %}
+  {{ content }}
+{% endif %}
