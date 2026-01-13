@@ -52,6 +52,16 @@
 /web/robots.txt
 /web/update.php
 /web/web.config
+# Drupal files directory
+web/sites/*/files/*
+!web/sites/*/files/.htaccess
+
+# Ignore config sync if wrongly placed
+web/sites/*/files/sync
+
+# OS / misc
+.DS_Store
+
 
 # Ignore vendor dependencies and scripts
 /vendor
@@ -65,4 +75,4 @@
 /drupal
 /node_modules
 .idea
-/web/sites/default/default.settings.php
+
